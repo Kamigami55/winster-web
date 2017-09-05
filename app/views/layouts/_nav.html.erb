@@ -1,0 +1,10 @@
+<nav>
+  <div class="nav-item" id="brand">
+    <div id="left-line"></div>
+    <h1>Winster</h1>
+    <div id="right-line"></div>
+  </div>
+  <div class="nav-item <%= 'nav-item-selected' if current_page?('/') %>"><%= link_to "Wines", '/' %></div>
+  <div class="nav-item <%= 'nav-item-selected' if current_page?('/settings/devices') %>"><%= link_to "Settings", '/settings/devices' %></div>
+  <div class="nav-item align-right"><%= link_to "Eason Chang", '#' %></div>
+</nav>

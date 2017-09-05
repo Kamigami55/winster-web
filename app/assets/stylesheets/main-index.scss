@@ -4,7 +4,6 @@ body {
 }
 
 *, h1 {
-  //border: 1px solid black;
   position: relative;
   margin: 0;
   padding: 0;
@@ -20,19 +19,22 @@ nav {
   .nav-item {
     margin-left: 50px;
     display: inline-block;
-    font-size: 26px;
     top: 50%;
     transform: translate(0%, -50%);
-    font-family: Avenir-Light;
-    background: -webkit-linear-gradient(#EBEBEB 0%, #D7D7D7 40%, #B5B5B5 50%, #D7D7D7 60%, #EBEBEB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    &:hover {
-      background: -webkit-linear-gradient(#FFFFFF 0%, #EBEBEB 40%, #D7D7D7 50%, #EBEBEB 60%, #FFFFFF 100%);
+    a {
+      font-size: 26px;
+      font-family: Avenir-Light;
+      background: -webkit-linear-gradient(#EBEBEB 0%, #D7D7D7 40%, #B5B5B5 50%, #D7D7D7 60%, #EBEBEB 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+      &:hover {
+        background: -webkit-linear-gradient(#FFFFFF 0%, #EBEBEB 40%, #D7D7D7 50%, #EBEBEB 60%, #FFFFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
+    
     
     &.align-right {
       text-align: right;
@@ -79,7 +81,7 @@ nav {
     }
   }
   
-  .nav-item-selected {
+  .nav-item-selected a {
     background: -webkit-linear-gradient(#F6C800 0%, #E6BB00 40%, #C39E00 50%, #E6BB00 60%, #F6C800 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
