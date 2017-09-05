@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'main#index'
+  get 'index', :to => 'main#index'
   get 'wine/:id', :to => 'main#wine'
   get 'settings/devices', :to => 'main#devices'
   get 'settings/account', :to => 'main#account'

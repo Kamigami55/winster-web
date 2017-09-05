@@ -1,0 +1,300 @@
+body {
+  overflow: hidden;
+}
+
+* {
+  //border: 1px solid white;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  height: 15vh;
+  background-image: radial-gradient(50% 0%, #181818 0%, #1E1E1E 100%);
+  box-sizing: border-box;
+  border-bottom: 1.5px solid;
+  border-image: linear-gradient(to right, black, #ddd, black) 1;
+  background: radial-gradient(#181818, #1E1E1E);
+  
+  .nav-item {
+    margin-left: 50px;
+    display: inline-block;
+    font-size: 26px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-family: Avenir-Light;
+    background: -webkit-linear-gradient(#EBEBEB 0%, #D7D7D7 40%, #B5B5B5 50%, #D7D7D7 60%, #EBEBEB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    &:hover {
+      background: -webkit-linear-gradient(#FFFFFF 0%, #EBEBEB 40%, #D7D7D7 50%, #EBEBEB 60%, #FFFFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    &.align-right {
+      text-align: right;
+      margin-right: 50px;
+      float: right;
+    }
+    
+    &#brand {
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      
+      h1 {
+        font-weight: 100;
+        color: #E9E9E9;
+        background: -webkit-linear-gradient(#E9E9E9, #BABABA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 60px;
+        font-family: Apple-Chancery;
+      }
+      
+      #left-line {
+        width: 130px;
+        display: inline-block;
+        position: absolute;
+        left: -150px;
+        top: 50%;
+        border-top: 1px solid;
+        border-image: linear-gradient(to left, #4F4F4F, rgba(0,0,0,0)) 1;
+      }
+      
+      #right-line {
+        width: 130px;
+        display: inline-block;
+        position: absolute;
+        right: -150px;
+        top: 50%;
+        border-top: 1px solid;
+        border-image: linear-gradient(to right, #4F4F4F, rgba(0,0,0,0)) 1;
+      }
+    }
+  }
+  
+  .nav-item-selected {
+    background: -webkit-linear-gradient(#F6C800 0%, #E6BB00 40%, #C39E00 50%, #E6BB00 60%, #F6C800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    &:hover {
+      background: -webkit-linear-gradient(#ffe880 0%, #F6C800 40%, #E6BB00 50%, #F6C800 60%, #ffe880 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+
+#devices-main-area {
+  height: 85vh;
+  width: 100vw;
+  background: #222;
+  .left-area {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background-color: #252525;
+    
+    .profile {
+      height: 250px;
+      .user-image {
+        margin: 30px auto;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        border: 2px solid white;
+        overflow: hidden;
+        img {
+          height: 100%;
+        }
+      }
+      
+      .username {
+        text-align: center;
+        font-size: 26px;
+      }
+    }
+
+    .menu {
+      border-bottom: 1px solid;
+      border-image: linear-gradient(to right, rgba(123,123,123,0.2), rgba(255,255,255,0.8), rgba(123,123,123,0.2)) 1;
+
+      .menu-item {
+        height: 60px;
+        font-size: 20px;
+        text-align: center;
+        border-top: 1px solid;
+        border-image: linear-gradient(to right, rgba(123,123,123,0.2), rgba(255,255,255,0.8), rgba(123,123,123,0.2)) 1;
+        background-color: #313131;
+      }
+
+      .menu-item-selected {
+        background-color: #e2b800;
+      }
+
+      .menu-text {
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+  
+  .right-area {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    background: radial-gradient(at 70% 30%, #3B3B3B, #000000 50%);
+    
+    .top-bar {
+      height: 60px;
+      background-color: #555;
+      font-size: 18px;
+      background: linear-gradient(to bottom, #FECF00, #e2b800);
+
+      .bar-item {
+        display: inline-block;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: 20px;
+      }
+
+      .search {
+        margin-right: 20px;
+        border-radius: 100px;
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        width: 200px;
+        height: 30px;
+        padding-left: 10px;
+        //padding-top: 8px;
+        border: 2px solid white;
+        color: white;
+        background-color: transparent;
+      }
+      .search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: rgba(255,255,255,0.8);
+      }
+    }
+
+    button.add-device {
+      border: 2px solid rgba(246,200,0,0.62);
+      color: rgba(246,200,0,0.62);
+      font-size: 16px;
+      background-color: transparent;
+      border-radius: 100px;
+      position: absolute;
+      right: 20px;
+      top: 80px;
+      width: 130px;
+      height: 35px;
+
+      &:hover {
+        border: 2px solid rgba(246,200,0,0.9);
+        color: rgba(246,200,0,0.9);
+      }
+    }
+
+    .devices-table {
+      width: 90%;
+      top: 10%;
+      height: 75%;
+      left: 5%;
+
+    }
+    .devices {
+      height: 92%;
+      overflow: scroll;
+
+      .index {
+        left: 5%;
+      }
+      .id {
+        left: 20%;
+      }
+      .wine {
+        left: 35%;
+      }
+      .status {
+        left: 70%;
+      }
+      .status > div {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .status-active {
+        height: 7px;
+        width: 7px;
+        background-color: green;
+        border-radius: 10px;
+      }
+      .status-val {
+        left: 15px;
+      }
+      .status-bar-active {
+        width: 5px;
+        background-color: green;
+        height: 100%;
+        border-radius: 100px;
+      }
+
+      & > div {
+        margin: 5px 0;
+        height: 50px;
+        border: 1px solid #5F5F5F;
+        background-color: #252525;
+        & > * {
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          transform: translate(0,-50%);
+        }
+      }
+    }
+
+    .columes {
+      height: 8%;
+      & > div {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: #A8A8A8;
+      }
+      .index-col {
+        left: 5%;
+      }
+      .id-col {
+        left: 20%;
+      }
+      .wine-col {
+        left: 35%;
+      }
+      .status-col {
+        left: 70%;
+      }
+    }
+
+
+    .more-button {
+      color: #ccc;
+      font-size: 24px;
+      background-color: transparent;
+      right: 20px;
+      border: 0px;
+    }
+
+    
+  }
+}
+
