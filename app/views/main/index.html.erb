@@ -1,165 +1,85 @@
-<div id="detail-main-area" style="display: none;">
-  <div id="left-bg-cover"></div>
-  <button class="back"><</button>
-  <div class="wine-img">
-      <img src="http://res.cloudinary.com/easonchang/image/upload/v1503581140/whiskey_xcpkmu.png">
-  </div>
-  <div class="wine-details">
-    <h1 class="wine-title"><i>Whiskey</i></h1>
-    <div class="wine-description">
-      <p class="description-left">
-        Status:<br/>
-        Alc:<br/>
-        Origin<br/>
-        Age:<br/>
-        Keep since:
-      </p>
-      <p class="description-right">
-        <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-        <span class="alc">40%</span><br/>
-        <span class="origin">Frence</span><br/>
-        <span class="age">50 years</span> <span class="age-small">(1968)</span><br/>
-        <span class="keep-since">2016/03/24</span>
-      </p>
-    </div>
-    <div id="score">Score: <span class="score-num">9.8</span></div>
-    <div id="taste"><div class="taste-label">Taste: <span class="taste-value">9.45</span></div>
-      <canvas id="taste-chart" width="100%"></canvas>
-</div>
-    <div id="weight"><div class="weight-label">Weight: <span class="weight-value">1001.2g</span></div>
-      <canvas id="weight-chart" width="100%"></canvas>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
 <div id="index-main-area">
-  <button id="view-all">View all</button>
+  <!-- <button id="view-all">View all</button> -->
   <button id="switch-left"><</button>
   <button id="switch-right">></button>
   <div id="center-circle"></div>
   <div id="bottom-table"></div>
   <div id="bottom-table-overlay"></div>
   <div id="wines">
-    <div class="wine wine-left-2">
-      <div class="wine-img">
-        <img src="http://res.cloudinary.com/easonchang/image/upload/v1503581137/red-wine_u7sqzl.png">
+
+    <% @wines.each_with_index do |wine, index|%>
+      <div class="wine
+        <% if index == 0 %>
+          <%= 'wine-left-2 wine1' %>
+        <% elsif index == 1 %>
+          <%= 'wine-left-1 wine2' %>
+        <% elsif index == 2 %>
+          <%= 'wine-center wine3' %>
+        <% elsif index == 3 %>
+          <%= 'wine-right-1 wine4' %>
+        <% else %>
+          <%= 'wine-right-2 wine5' %>
+        <% end %>
+      ">
+        <div class="wine-img">
+          <img src="<%= wine.imgurl %>">
+        </div>
+        <h1 class="wine-title"><i><%= wine.name %></i></h1>
+        <div class="wine-description">
+          <p class="description-left">
+            Status:<br/>
+            Score:<br/>
+            ABV:<br/>
+            Origin<br/>
+            Age:
+          </p>
+          <p class="description-right">
+            <span class="status">Excellent  <span class="status-small">(<%= wine.status %>%)</span></span><br/>
+            <span class="score"><%= wine.score %></span><br/>
+            <span class="alc"><%= wine.abv %>%</span><br/>
+            <span class="origin"><%= wine.origin %></span><br/>
+            <span class="age"><%= wine.age %> years</span> <span class="age-small">(<%= wine.brewdate.year %>)</span>
+          </p>
+        </div>
       </div>
-      <h1 class="wine-title"><i>Red</i></h1>
-      <div class="wine-description">
-        <p class="description-left">
-          Status:<br/>
-          Score:<br/>
-          ABV:<br/>
-          Origin<br/>
-          Age:
-        </p>
-        <p class="description-right">
-          <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-          <span class="score">9.8</span><br/>
-          <span class="alc">40%</span><br/>
-          <span class="origin">Frence</span><br/>
-          <span class="age">50 years</span> <span class="age-small">(1968)</span>
-        </p>
-      </div>
-    </div>
-    <div class="wine wine-left-1">
-      <div class="wine-img">
-        <img src="http://res.cloudinary.com/easonchang/image/upload/v1503581137/lime_qkbpno.png">
-      </div>
-      <h1 class="wine-title"><i>Lime</i></h1>
-      <div class="wine-description">
-        <p class="description-left">
-          Status:<br/>
-          Score:<br/>
-          ABV:<br/>
-          Origin<br/>
-          Age:
-        </p>
-        <p class="description-right">
-           <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-          <span class="score">9.8</span><br/>
-          <span class="alc">40%</span><br/>
-          <span class="origin">Frence</span><br/>
-          <span class="age">50 years</span> <span class="age-small">(1968)</span>
-        </p>
-      </div>
-    </div>
-    <div class="wine wine-center">
-      <div class="wine-img">
-        <img src="http://res.cloudinary.com/easonchang/image/upload/v1503581140/whiskey_xcpkmu.png">
-      </div>
-      <h1 class="wine-title"><i>Whiskey</i></h1>
-      <div class="wine-description">
-        <p class="description-left">
-          Status:<br/>
-          Score:<br/>
-          Alc:<br/>
-          Origin<br/>
-          Age:
-        </p>
-        <p class="description-right">
-          <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-          <span class="score">9.8</span><br/>
-          <span class="alc">40%</span><br/>
-          <span class="origin">Frence</span><br/>
-          <span class="age">50 years</span> <span class="age-small">(1968)</span>
-        </p>
-      </div>
-    </div>
-    <div class="wine wine-right-1">
-      <div class="wine-img">
-        <img src="http://res.cloudinary.com/easonchang/image/upload/v1503581139/shelly_ukumxn.png">
-      </div>
-      <h1 class="wine-title"><i>Shelly</i></h1>
-      <div class="wine-description">
-        <p class="description-left">
-          Status:<br/>
-          Score:<br/>
-          ABV:<br/>
-          Origin<br/>
-          Age:
-        </p>
-        <p class="description-right">
-          <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-          <span class="score">9.8</span><br/>
-          <span class="alc">40%</span><br/>
-          <span class="origin">Frence</span><br/>
-          <span class="age">50 years</span> <span class="age-small">(1968)</span>
-        </p>
-      </div>
-    </div>
-    <div class="wine wine-right-2">
-      <div class="wine-img"><img src="http://res.cloudinary.com/easonchang/image/upload/v1503581138/white-wine_flxshg.png"></div>
-      <h1 class="wine-title"><i>White</i></h1>
-      <div class="wine-description">
-        <p class="description-left">
-          Status:<br/>
-          Score:<br/>
-          ABV:<br/>
-          Origin<br/>
-          Age:
-        </p>
-        <p class="description-right">
-          <span class="status">Excellent  <span class="status-small">(97%)</span></span><br/>
-          <span class="score">9.8</span><br/>
-          <span class="alc">40%</span><br/>
-          <span class="origin">Frence</span><br/>
-          <span class="age">50 years</span> <span class="age-small">(1968)</span>
-        </p>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
 
-<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" %>
-  
+
+<% @wines.each_with_index do |wine, index|%>
+  <div class="detail-main-area <%= 'detail'+((index+1).to_s) %>" style="display: none;">
+    <div id="left-bg-cover"></div>
+    <button class="back"><</button>
+    <div class="wine-img">
+        <img src="<%= wine.imgurl %>">
+    </div>
+    <div class="wine-details">
+      <h1 class="wine-title"><i><%= wine.name %></i></h1>
+      <div class="wine-description">
+        <p class="description-left">
+          Status:<br/>
+          Alc:<br/>
+          Origin<br/>
+          Age:<br/>
+          Keep since:
+        </p>
+        <p class="description-right">
+          <span class="status">Excellent  <span class="status-small">(<%= wine.status %>%)</span></span><br/>
+          <span class="alc"><%= wine.abv %>%</span><br/>
+          <span class="origin"><%= wine.origin %></span><br/>
+          <span class="age"><%= wine.age %> years</span> <span class="age-small">(<%= wine.brewdate.year %>)</span><br/>
+          <span class="keep-since"><%= wine.keepdate %></span>
+        </p>
+      </div>
+      <div id="score">Score: <span class="score-num"><%= wine.score %></span></div>
+      <div id="taste"><div class="taste-label">Taste: <span class="taste-value"><%= wine.taste %></span></div>
+        <canvas id="taste-chart" width="100%"></canvas>
+      </div>
+      <div id="weight"><div class="weight-label">Weight: <span class="weight-value"><%= wine.weight %>g</span></div>
+        <canvas id="weight-chart" width="100%"></canvas>
+      </div>
+    </div>
+  </div>
+<% end %>

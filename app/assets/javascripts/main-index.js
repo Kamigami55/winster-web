@@ -15,13 +15,48 @@ $( document ).ready(function() {
     $(".wine-left-2").switchClass("wine-left-2", "wine-left-1", 500);
   });
 
-  $(".wine-center").click(function() {
-    $("#detail-main-area").fadeToggle();
+  $(".wine1").click(function() {
+    $(".detail1").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+  $(".detail1 .back").click(function() {
+    $(".detail1").fadeToggle();
     $("#index-main-area").fadeToggle();
   });
 
-  $(".back").click(function() {
-    $("#detail-main-area").fadeToggle();
+  $(".wine2").click(function() {
+    $(".detail2").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+  $(".detail2 .back").click(function() {
+    $(".detail2").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+
+  $(".wine3").click(function() {
+    $(".detail3").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+  $(".detail3 .back").click(function() {
+    $(".detail3").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+
+  $(".wine4").click(function() {
+    $(".detail4").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+  $(".detail4 .back").click(function() {
+    $(".detail4").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+
+  $(".wine5").click(function() {
+    $(".detail5").fadeToggle();
+    $("#index-main-area").fadeToggle();
+  });
+  $(".detail5 .back").click(function() {
+    $(".detail5").fadeToggle();
     $("#index-main-area").fadeToggle();
   });
 

@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   def index
+    @wines = Wine.all
   end
 
   def wine
