@@ -1,0 +1,2 @@
+class Winedatum < ApplicationRecord
+end

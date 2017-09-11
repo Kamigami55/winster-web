@@ -20,29 +20,12 @@
     </div>
     <%= link_to '/settings/devices/new' do %><button class="add-device">Add device +</button><% end %>
     <div class="devices-table">
-      <div class="columes">
-        <div class="index-col">Index</div>
-        <div class="id-col">Label</div>
-        <div class="wine-col">Wine</div>
-        <div class="status-col">Status</div>
-      </div>
       <div class="devices">
-        <% @devices.each_with_index do |device| %>
-          <div class="this-is-device">
-            <div class="status-bar-active"></div>
-            <div class="index"><%= device.id %></div>
-            <div class="id">#<%= device.label %></div>
-            <div class="wine"><%= device.wine %></div>
-            <div class="status">
-              <% if device.status == "Active" %>
-                <div class="status-active"></div>
-              <% elsif device.status == "Ready" %>
-                <div class="status-ready"></div>
-              <% end %>
-              <div class="status-val"><%= device.status %></div>
-            </div>
-            <button class="more-button">></button>
-          </div>
+        <h1>Add new device</h1>
+        <%= form_for @device, :url => { :controller => 'main', :action => 'create' } do |f| %>
+          <%= f.label :label, "Label: " %>
+          <%= f.text_field :label, placeholder: "1234" %>
+          <%= f.submit "Add" %>
         <% end %>
       </div>
     </div>

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'settings/devices', :to => 'main#devices'
   get 'settings/account', :to => 'main#account'
   get 'settings/system', :to => 'main#system'
+  get 'settings/devices/new', :to => 'main#new'
+  post 'settings/devices/create', :to => 'main#create'
 end

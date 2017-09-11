@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).on("turbolinks:load", function(){
   $("#switch-right").click(function() {
     $(".wine-right-1").switchClass("wine-right-1", "wine-center", 500);
     $(".wine-center").switchClass("wine-center", "wine-left-1", 500);
@@ -60,38 +60,504 @@ $( document ).ready(function() {
     $("#index-main-area").fadeToggle();
   });
 
-  var ctx = document.getElementById("taste-chart").getContext('2d');
-  var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun.", "Mon.", "Tue.", "Wed.", "Thu."],
-          datasets: [{
-              label: 'Taste',
-              data: [9.2, 9.3, 9.4, 9.4, 9.35, 9.2, 9.15, 9.18, 9.24, 9.31, 9.45],
-              borderColor: 'rgba(246,200,0,1)',
-              borderWidth: 1,
-              pointRadius: 1
-          }]
-      },
-      options: {
-      }
-  });
+  // $(".wine" )
+  // .mouseenter(function() {
+  //   $(this).animate({
+  //     transform: scale(1.1,1.1)
+  //   });
+  // })
+  // .mouseleave(function() {
+  //   $(this).animate({
+  //     transform: scale(1.0,1.0)
+  //   });
+  // });
 
-  var ctx = document.getElementById("weight-chart").getContext('2d');
-  var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.", "Sun.", "Mon.", "Tue.", "Wed.", "Thu."],
-          datasets: [{
-              label: 'Weight',
-              data: [1013, 1015, 1012, 1011, 1009, 1005, 1007, 1004, 1003, 998, 1001],
-              borderColor: 'rgba(246,200,0,1)',
-              borderWidth: 1,
-              pointRadius: 1
-          }]
-      },
-      options: {
-      }
-  });
+
+
+
+//   var ctx = document.getElementById("color-chart1").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [
+//             {
+//               label: 'White',
+//               data: [314, 318, 324, 316],
+//               borderColor: 'rgba(255,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Red',
+//               data: [521, 564, 543, 531],
+//               borderColor: 'rgba(255,0,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Blue',
+//               data: [444, 432, 431, 452],
+//               borderColor: 'rgba(0,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Green',
+//               data: [642, 643, 651, 666],
+//               borderColor: 'rgba(0,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Yellow',
+//               data: [316, 312, 341, 330],
+//               borderColor: 'rgba(255,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Purple',
+//               data: [222, 231, 212, 231],
+//               borderColor: 'rgba(255,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Cyan',
+//               data: [432, 444, 454, 424],
+//               borderColor: 'rgba(0,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             }
+//           ]
+//       },
+//       options: {
+//       }
+//   });
+
+//   var ctx = document.getElementById("color-chart2").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [
+//             {
+//               label: 'White',
+//               data: [32991, 32905, 32889, 32907],
+//               borderColor: 'rgba(255,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Red',
+//               data: [18699, 18591, 18765, 18],
+//               borderColor: 'rgba(255,0,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Blue',
+//               data: [444, 432, 431, 452],
+//               borderColor: 'rgba(0,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Green',
+//               data: [642, 643, 651, 666],
+//               borderColor: 'rgba(0,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Yellow',
+//               data: [316, 312, 341, 330],
+//               borderColor: 'rgba(255,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Purple',
+//               data: [222, 231, 212, 231],
+//               borderColor: 'rgba(255,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Cyan',
+//               data: [432, 444, 454, 424],
+//               borderColor: 'rgba(0,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             }
+//           ]
+//       },
+//       options: {
+//       }
+//   });
+
+//     var ctx = document.getElementById("color-chart3").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [
+//             {
+//               label: 'White',
+//               data: [314, 318, 324, 316],
+//               borderColor: 'rgba(255,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Red',
+//               data: [521, 564, 543, 531],
+//               borderColor: 'rgba(255,0,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Blue',
+//               data: [444, 432, 431, 452],
+//               borderColor: 'rgba(0,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Green',
+//               data: [642, 643, 651, 666],
+//               borderColor: 'rgba(0,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Yellow',
+//               data: [316, 312, 341, 330],
+//               borderColor: 'rgba(255,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Purple',
+//               data: [222, 231, 212, 231],
+//               borderColor: 'rgba(255,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Cyan',
+//               data: [432, 444, 454, 424],
+//               borderColor: 'rgba(0,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             }
+//           ]
+//       },
+//       options: {
+//       }
+//   });
+
+//   var ctx = document.getElementById("color-chart4").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [
+//             {
+//               label: 'White',
+//               data: [314, 318, 324, 316],
+//               borderColor: 'rgba(255,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Red',
+//               data: [521, 564, 543, 531],
+//               borderColor: 'rgba(255,0,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Blue',
+//               data: [444, 432, 431, 452],
+//               borderColor: 'rgba(0,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Green',
+//               data: [642, 643, 651, 666],
+//               borderColor: 'rgba(0,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Yellow',
+//               data: [316, 312, 341, 330],
+//               borderColor: 'rgba(255,255,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Purple',
+//               data: [222, 231, 212, 231],
+//               borderColor: 'rgba(255,0,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             },
+//             {
+//               label: 'Cyan',
+//               data: [432, 444, 454, 424],
+//               borderColor: 'rgba(0,255,255,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//             }
+//           ]
+//       },
+//       options: {
+//       }
+//   });
+
+//   // var ctx = document.getElementById("color-chart5")
+//   // if(ctx != null) {
+//   //   ctx = ctx.getContext('2d');
+//   //   var myChart = new Chart(ctx, {
+//   //       type: 'line',
+//   //       data: {
+//   //           labels: ["7:30", "7:31", "7:32", "7:33"],
+//   //           datasets: [
+//   //             {
+//   //               label: 'White',
+//   //               data: [314, 318, 324, 316],
+//   //               borderColor: 'rgba(255,255,255,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Red',
+//   //               data: [521, 564, 543, 531],
+//   //               borderColor: 'rgba(255,0,0,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Blue',
+//   //               data: [444, 432, 431, 452],
+//   //               borderColor: 'rgba(0,0,255,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Green',
+//   //               data: [642, 643, 651, 666],
+//   //               borderColor: 'rgba(0,255,0,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Yellow',
+//   //               data: [316, 312, 341, 330],
+//   //               borderColor: 'rgba(255,255,0,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Purple',
+//   //               data: [222, 231, 212, 231],
+//   //               borderColor: 'rgba(255,0,255,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             },
+//   //             {
+//   //               label: 'Cyan',
+//   //               data: [432, 444, 454, 424],
+//   //               borderColor: 'rgba(0,255,255,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //             }
+//   //           ]
+//   //       },
+//   //       options: {
+//   //       }
+//   //   });
+//   // }
+
+
+
+
+
+
+
+
+//   var ctx = document.getElementById("weight-chart1").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [1013, 1015, 1012, 1007],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("weight-chart2").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [1013, 1015, 1012, 1007],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("weight-chart3").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [1013, 1015, 1012, 1007],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("weight-chart4").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [1013, 1015, 1012, 1007],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   // var ctx = document.getElementById("weight-chart5");
+//   // if(ctx != null){
+//   //   ctx = ctx.getContext('2d');
+//   //   var myChart = new Chart(ctx, {
+//   //       type: 'line',
+//   //       data: {
+//   //           labels: ["7:30", "7:31", "7:32", "7:33"],
+//   //           datasets: [{
+//   //               label: 'Weight',
+//   //               data: [1013, 1015, 1012, 1007],
+//   //               borderColor: 'rgba(246,200,0,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //           }]
+//   //       },
+//   //       options: {
+//   //       }
+//   //   });
+//   // }
+  
+
+
+//   var ctx = document.getElementById("temperature-chart1").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [22.1, 22.6, 22.9, 21.4],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("temperature-chart2").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [22.1, 22.6, 22.9, 21.4],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("temperature-chart3").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [12.1, 12.4, 12.6, 12.3],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   var ctx = document.getElementById("temperature-chart4").getContext('2d');
+//   var myChart = new Chart(ctx, {
+//       type: 'line',
+//       data: {
+//           labels: ["7:30", "7:31", "7:32", "7:33"],
+//           datasets: [{
+//               label: 'Weight',
+//               data: [22.1, 22.6, 22.9, 21.4],
+//               borderColor: 'rgba(246,200,0,1)',
+//               borderWidth: 1,
+//               pointRadius: 3
+//           }]
+//       },
+//       options: {
+//       }
+//   });
+//   // var ctx = document.getElementById("temperature-chart5");
+//   // if(ctx != null){
+//   //   ctx = ctx.getContext('2d');
+//   //   var myChart = new Chart(ctx, {
+//   //       type: 'line',
+//   //       data: {
+//   //           labels: ["7:30", "7:31", "7:32", "7:33"],
+//   //           datasets: [{
+//   //               label: 'Weight',
+//   //               data: [22.1, 22.6, 22.9, 21.4],
+//   //               borderColor: 'rgba(246,200,0,1)',
+//   //               borderWidth: 1,
+//   //               pointRadius: 3
+//   //           }]
+//   //       },
+//   //       options: {
+//   //       }
+//   //   });
+//   // }
 });
 

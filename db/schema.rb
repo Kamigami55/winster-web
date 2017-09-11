@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905230442) do
+ActiveRecord::Schema.define(version: 20170907221543) do
+
+  create_table "devices", force: :cascade do |t|
+    t.integer "label"
+    t.string "wine"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "winedata", force: :cascade do |t|
+    t.string "time"
+    t.float "white"
+    t.float "red"
+    t.float "green"
+    t.float "blue"
+    t.float "violate"
+    t.float "purple"
+    t.float "yellow"
+    t.float "mass"
+    t.float "temperature"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "wines", force: :cascade do |t|
     t.string "name"
