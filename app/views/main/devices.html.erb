@@ -29,7 +29,14 @@
       <div class="devices">
         <% @devices.each_with_index do |device| %>
           <div class="this-is-device">
-            <div class="status-bar-active"></div>
+            <% if device.status == "Active" %>
+              <div class="status-bar-active"></div>
+            <% elsif device.status == "Ready" %>
+              <div class="status-bar-ready"></div>
+            <% elsif device.status == "Disactive" %>
+              <div class="status-bar-disactive"></div>
+            <% end %>
+            
             <div class="index"><%= device.id %></div>
             <div class="id">#<%= device.label %></div>
             <div class="wine"><%= device.wine %></div>
@@ -38,6 +45,8 @@
                 <div class="status-active"></div>
               <% elsif device.status == "Ready" %>
                 <div class="status-ready"></div>
+              <% elsif device.status == "Disactive" %>
+                <div class="status-disactive"></div>
               <% end %>
               <div class="status-val"><%= device.status %></div>
             </div>

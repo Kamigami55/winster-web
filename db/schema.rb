@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016151533) do
+ActiveRecord::Schema.define(version: 20171016153902) do
 
   create_table "devices", force: :cascade do |t|
     t.integer "label"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20171016151533) do
   end
 
   create_table "winedata", force: :cascade do |t|
+    t.string "time"
+    t.float "white"
+    t.float "red"
+    t.float "green"
+    t.float "blue"
+    t.float "violate"
+    t.float "purple"
+    t.float "yellow"
+    t.float "mass"
+    t.float "temperature"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "winedata1s", force: :cascade do |t|
     t.string "time"
     t.float "white"
     t.float "red"
@@ -108,6 +123,30 @@ ActiveRecord::Schema.define(version: 20171016151533) do
     t.decimal "PURPLE", precision: 10, scale: 2, null: false
     t.decimal "VIOLATE", precision: 10, scale: 2, null: false
     t.string "BOTTLECOLOR", limit: 1, null: false
+  end
+
+  create_table "winedatabases", force: :cascade do |t|
+    t.string "type"
+    t.string "name"
+    t.float "weight"
+    t.float "alc"
+    t.float "white"
+    t.float "red"
+    t.float "green"
+    t.float "blue"
+    t.float "violate"
+    t.float "purple"
+    t.float "yellow"
+    t.float "temperature_low"
+    t.float "temperature_high"
+    t.string "bottlecolor"
+    t.string "origin"
+    t.date "brewdate"
+    t.integer "age"
+    t.float "score"
+    t.string "imgurl"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "wines", force: :cascade do |t|

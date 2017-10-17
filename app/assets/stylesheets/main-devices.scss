@@ -164,12 +164,30 @@
         background-color: yellow;
         border-radius: 10px;
       }
+      .status-disactive {
+        height: 7px;
+        width: 7px;
+        background-color: red;
+        border-radius: 10px;
+      }
       .status-val {
         left: 15px;
       }
       .status-bar-active {
         width: 5px;
         background-color: green;
+        height: 100%;
+        border-radius: 100px;
+      }
+      .status-bar-disactive {
+        width: 5px;
+        background-color: red;
+        height: 100%;
+        border-radius: 100px;
+      }
+      .status-bar-ready {
+        width: 5px;
+        background-color: yellow;
         height: 100%;
         border-radius: 100px;
       }

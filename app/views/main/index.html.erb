@@ -77,7 +77,7 @@
       <div id="color"><div class="color-label">Optical Density:</div>
         <canvas id="color-chart<%= (index+1).to_s %>" width="100%"></canvas>
       </div>
-      <div id="weight"><div class="weight-label">Weight: <span class="weight-value"><%= @masses.last %>g</span></div>
+      <div id="weight" style="display: none;"><div class="weight-label">Weight: <span class="weight-value"><%= @masses.last %>g</span></div>
         <canvas id="weight-chart<%= (index+1).to_s %>" width="100%"></canvas>
       </div>
       <div id="temperature"><div class="temperature-label">Temperature(℃): <span class="temperature-value"><%= @temperatures.last.to_i %></span></div>
@@ -216,12 +216,12 @@
           type: 'line',
           data: {
               //labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels4.join(',') %>],
               datasets: [
                 {
                   label: 'White',
                   //data: [314, 318, 324, 316],
-                  data: [<%= @whites.join(',') %>],
+                  data: [<%= @whites4.join(',') %>],
                   borderColor: 'rgba(255,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -229,7 +229,7 @@
                 {
                   label: 'Red',
                   //data: [521, 564, 543, 531],
-                  data: [<%= @reds.join(',') %>],
+                  data: [<%= @reds4.join(',') %>],
                   borderColor: 'rgba(255,0,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -237,7 +237,7 @@
                 {
                   label: 'Blue',
                   //data: [444, 432, 431, 452],
-                  data: [<%= @blues.join(',') %>],
+                  data: [<%= @blues4.join(',') %>],
                   borderColor: 'rgba(0,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -245,7 +245,7 @@
                 {
                   label: 'Green',
                   //data: [642, 643, 651, 666],
-                  data: [<%= @greens.join(',') %>],
+                  data: [<%= @greens4.join(',') %>],
                   borderColor: 'rgba(0,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -253,7 +253,7 @@
                 {
                   label: 'Yellow',
                   //data: [316, 312, 341, 330],
-                  data: [<%= @yellows.join(',') %>],
+                  data: [<%= @yellows4.join(',') %>],
                   borderColor: 'rgba(255,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -261,7 +261,7 @@
                 {
                   label: 'Purple',
                   // data: [222, 231, 212, 231],
-                  data: [<%= @purples.join(',') %>],
+                  data: [<%= @purples4.join(',') %>],
                   borderColor: 'rgba(255,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -269,7 +269,7 @@
                 {
                   label: 'Cyan',
                   // data: [432, 444, 454, 424],
-                  data: [<%= @violates.join(',') %>],
+                  data: [<%= @violates4.join(',') %>],
                   borderColor: 'rgba(0,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -287,10 +287,10 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels4.join(',') %>],
               datasets: [{
                   label: 'Weight',
-                  data: [<%= @masses.join(',') %>],
+                  data: [<%= @masses4.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -307,11 +307,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels4.join(',') %>],
               datasets: [{
                   label: 'Temperature',
                   // data: [22.1, 22.6, 22.9, 21.4],
-                  data: [<%= @temperatures.join(',') %>],
+                  data: [<%= @temperatures4.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -334,12 +334,12 @@
           type: 'line',
           data: {
               //labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels3.join(',') %>],
               datasets: [
                 {
                   label: 'White',
                   //data: [314, 318, 324, 316],
-                  data: [<%= @whites.join(',') %>],
+                  data: [<%= @whites3.join(',') %>],
                   borderColor: 'rgba(255,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -347,7 +347,7 @@
                 {
                   label: 'Red',
                   //data: [521, 564, 543, 531],
-                  data: [<%= @reds.join(',') %>],
+                  data: [<%= @reds3.join(',') %>],
                   borderColor: 'rgba(255,0,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -355,7 +355,7 @@
                 {
                   label: 'Blue',
                   //data: [444, 432, 431, 452],
-                  data: [<%= @blues.join(',') %>],
+                  data: [<%= @blues3.join(',') %>],
                   borderColor: 'rgba(0,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -363,7 +363,7 @@
                 {
                   label: 'Green',
                   //data: [642, 643, 651, 666],
-                  data: [<%= @greens.join(',') %>],
+                  data: [<%= @greens3.join(',') %>],
                   borderColor: 'rgba(0,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -371,7 +371,7 @@
                 {
                   label: 'Yellow',
                   //data: [316, 312, 341, 330],
-                  data: [<%= @yellows.join(',') %>],
+                  data: [<%= @yellows3.join(',') %>],
                   borderColor: 'rgba(255,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -379,7 +379,7 @@
                 {
                   label: 'Purple',
                   // data: [222, 231, 212, 231],
-                  data: [<%= @purples.join(',') %>],
+                  data: [<%= @purples3.join(',') %>],
                   borderColor: 'rgba(255,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -387,7 +387,7 @@
                 {
                   label: 'Cyan',
                   // data: [432, 444, 454, 424],
-                  data: [<%= @violates.join(',') %>],
+                  data: [<%= @violates3.join(',') %>],
                   borderColor: 'rgba(0,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -405,11 +405,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels3.join(',') %>],
               datasets: [{
                   label: 'Weight',
                   // data: [1013, 1015, 1012, 1007],
-                  data: [<%= @masses.join(',') %>],
+                  data: [<%= @masses3.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -426,11 +426,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels3.join(',') %>],
               datasets: [{
                   label: 'Temperature',
                   // data: [22.1, 22.6, 22.9, 21.4],
-                  data: [<%= @temperatures.join(',') %>],
+                  data: [<%= @temperatures3.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -452,12 +452,12 @@
           type: 'line',
           data: {
               //labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels2.join(',') %>],
               datasets: [
                 {
                   label: 'White',
                   //data: [314, 318, 324, 316],
-                  data: [<%= @whites.join(',') %>],
+                  data: [<%= @whites2.join(',') %>],
                   borderColor: 'rgba(255,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -465,7 +465,7 @@
                 {
                   label: 'Red',
                   //data: [521, 564, 543, 531],
-                  data: [<%= @reds.join(',') %>],
+                  data: [<%= @reds2.join(',') %>],
                   borderColor: 'rgba(255,0,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -473,7 +473,7 @@
                 {
                   label: 'Blue',
                   //data: [444, 432, 431, 452],
-                  data: [<%= @blues.join(',') %>],
+                  data: [<%= @blues2.join(',') %>],
                   borderColor: 'rgba(0,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -481,7 +481,7 @@
                 {
                   label: 'Green',
                   //data: [642, 643, 651, 666],
-                  data: [<%= @greens.join(',') %>],
+                  data: [<%= @greens2.join(',') %>],
                   borderColor: 'rgba(0,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -489,7 +489,7 @@
                 {
                   label: 'Yellow',
                   //data: [316, 312, 341, 330],
-                  data: [<%= @yellows.join(',') %>],
+                  data: [<%= @yellows2.join(',') %>],
                   borderColor: 'rgba(255,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -497,7 +497,7 @@
                 {
                   label: 'Purple',
                   // data: [222, 231, 212, 231],
-                  data: [<%= @purples.join(',') %>],
+                  data: [<%= @purples2.join(',') %>],
                   borderColor: 'rgba(255,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -505,7 +505,7 @@
                 {
                   label: 'Cyan',
                   // data: [432, 444, 454, 424],
-                  data: [<%= @violates.join(',') %>],
+                  data: [<%= @violates2.join(',') %>],
                   borderColor: 'rgba(0,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -523,11 +523,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels2.join(',') %>],
               datasets: [{
                   label: 'Weight',
                   // data: [1013, 1015, 1012, 1007],
-                  data: [<%= @masses.join(',') %>],
+                  data: [<%= @masses2.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -544,11 +544,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels2.join(',') %>],
               datasets: [{
                   label: 'Temperature',
                   // data: [22.1, 22.6, 22.9, 21.4],
-                  data: [<%= @temperatures.join(',') %>],
+                  data: [<%= @temperatures2.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -569,12 +569,12 @@
           type: 'line',
           data: {
               //labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels1.join(',') %>],
               datasets: [
                 {
                   label: 'White',
                   //data: [314, 318, 324, 316],
-                  data: [<%= @whites.join(',') %>],
+                  data: [<%= @whites1.join(',') %>],
                   borderColor: 'rgba(255,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -582,7 +582,7 @@
                 {
                   label: 'Red',
                   //data: [521, 564, 543, 531],
-                  data: [<%= @reds.join(',') %>],
+                  data: [<%= @reds1.join(',') %>],
                   borderColor: 'rgba(255,0,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -590,7 +590,7 @@
                 {
                   label: 'Blue',
                   //data: [444, 432, 431, 452],
-                  data: [<%= @blues.join(',') %>],
+                  data: [<%= @blues1.join(',') %>],
                   borderColor: 'rgba(0,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -598,7 +598,7 @@
                 {
                   label: 'Green',
                   //data: [642, 643, 651, 666],
-                  data: [<%= @greens.join(',') %>],
+                  data: [<%= @greens1.join(',') %>],
                   borderColor: 'rgba(0,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -606,7 +606,7 @@
                 {
                   label: 'Yellow',
                   //data: [316, 312, 341, 330],
-                  data: [<%= @yellows.join(',') %>],
+                  data: [<%= @yellows1.join(',') %>],
                   borderColor: 'rgba(255,255,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -614,7 +614,7 @@
                 {
                   label: 'Purple',
                   // data: [222, 231, 212, 231],
-                  data: [<%= @purples.join(',') %>],
+                  data: [<%= @purples1.join(',') %>],
                   borderColor: 'rgba(255,0,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -622,7 +622,7 @@
                 {
                   label: 'Cyan',
                   // data: [432, 444, 454, 424],
-                  data: [<%= @violates.join(',') %>],
+                  data: [<%= @violates1.join(',') %>],
                   borderColor: 'rgba(0,255,255,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -640,11 +640,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels1.join(',') %>],
               datasets: [{
                   label: 'Weight',
                   // data: [1013, 1015, 1012, 1007],
-                  data: [<%= @masses.join(',') %>],
+                  data: [<%= @masses1.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3
@@ -661,11 +661,11 @@
           type: 'line',
           data: {
               // labels: ["7:30", "7:31", "7:32", "7:33"],
-              labels: [<%= @timelabels.join(',') %>],
+              labels: [<%= @timelabels1.join(',') %>],
               datasets: [{
                   label: 'Temperature',
                   // data: [22.1, 22.6, 22.9, 21.4],
-                  data: [<%= @temperatures.join(',') %>],
+                  data: [<%= @temperatures1.join(',') %>],
                   borderColor: 'rgba(246,200,0,1)',
                   borderWidth: 1,
                   pointRadius: 3

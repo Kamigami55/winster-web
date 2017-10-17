@@ -1,0 +1,2 @@
+class Winedatabase < ApplicationRecord
+end
