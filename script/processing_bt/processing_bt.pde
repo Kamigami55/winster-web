@@ -15,7 +15,8 @@ boolean first_insert = false;
 int count = 1;
 void setup()
 {
-  size( 100, 100 );
+  size( 400, 400 );
+  background(0);
   db = new SQLite( this, "../../db/development.sqlite3" );
   printArray(Serial.list());
   println("Winster deamon start!");
@@ -36,7 +37,7 @@ void draw() {
     case "r":
       id = inputs[1];
       println("Wait to register on website...");
-      delay(2000);
+      delay(10000);
       myPort.write("y,"+id);
       println("y,"+id);
       break;
@@ -281,7 +282,7 @@ void analyse(){
     println("Brewdate: " + brewdate);
     println("Alc: " + alc);
     
-    float status = Float.parseFloat(temperature) - temperature_high;
+    float status = 100-abs((Float.parseFloat(temperature)/100)-temperature_high);
     
     db.query(String.format("INSERT INTO wines(Name, Status, Abv, Origin, Brewdate, Age, Keepdate, Score, Weight, Taste, Imgurl, Created_at, Updated_at) VALUES('%s',%f,%f,'%s','%s',%d,date('now'),%f,0,0,'%s',datetime('now'),datetime('now'));", name, status, alc, origin, brewdate, 2, score, imgurl));
     db.query(String.format("UPDATE devices SET wine = '%s' WHERE label = 6045", name));
